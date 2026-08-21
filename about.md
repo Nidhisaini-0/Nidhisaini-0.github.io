@@ -17,9 +17,9 @@ title: About
     </p>
 
     <p>
-      This blog is where I document my journey through
-      cybersecurity, networking, Linux, web security,
-      ethical hacking, and security tools.
+      This blog documents my journey through cybersecurity,
+      networking, Linux, web security, ethical hacking,
+      and security tools.
     </p>
 
 
@@ -45,6 +45,8 @@ title: About
 
       <li>Security Tools</li>
 
+      <li>CTFs and Security Labs</li>
+
     </ul>
 
 
@@ -53,8 +55,15 @@ title: About
     </h2>
 
     <p>
-      The goal is simple: learn by doing.
+      The goal is to learn by doing.
     </p>
+
+    <p>
+      Instead of simply learning tools, I want to understand
+      how systems work, how vulnerabilities happen, and how
+      they can be secured.
+    </p>
+
 
     <blockquote>
       Learn. Experiment. Understand. Secure.

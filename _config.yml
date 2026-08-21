@@ -6,15 +6,15 @@ url: "https://Nidhisaini-0.github.io"
 baseurl: ""
 
 markdown: kramdown
+
 permalink: /blog/:year/:month/:day/:title/
 
 kramdown:
-  syntax_highlighter: rouge
   input: GFM
+  syntax_highlighter: rouge
 
-collections:
-  posts:
-    output: true
+plugins:
+  - jekyll-feed
 
 defaults:
   - scope:

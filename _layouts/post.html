@@ -6,29 +6,141 @@ layout: default
 
   <header class="article-header">
 
+    <div class="article-label">
+      root@cybersec:~$ cat article.md
+    </div>
+
     <h1 class="article-title">
       {{ page.title }}
     </h1>
 
+
     <div class="article-meta">
 
-      {{ page.date | date: "%d %B %Y" }}
+      <span>
+        {{ page.date | date: "%d %B %Y" }}
+      </span>
 
-      {% if page.categories %}
-        ·
-        {% for category in page.categories %}
-          {{ category }}
-        {% endfor %}
+
+      {% assign words = content | number_of_words %}
+
+      {% assign reading_time = words | divided_by: 200 %}
+
+      {% if reading_time < 1 %}
+        {% assign reading_time = 1 %}
       {% endif %}
+
+      <span>
+        · {{ reading_time }} min read
+      </span>
 
     </div>
 
+
+    {% if page.categories %}
+
+      <div class="tags">
+
+        {% for category in page.categories %}
+
+          <a
+            class="tag"
+            href="{{ '/categories/#' | append: category | slugify | relative_url }}"
+          >
+            #{{ category }}
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    {% endif %}
+
+
+    {% if page.tags %}
+
+      <div class="tags">
+
+        {% for tag in page.tags %}
+
+          <a
+            class="tag"
+            href="{{ '/tags/#' | append: tag | slugify | relative_url }}"
+          >
+            {{ tag }}
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    {% endif %}
+
   </header>
+
+
+  {% if page.toc != false %}
+
+    <aside class="toc-container">
+
+      <div class="toc-title">
+        TABLE OF CONTENTS
+      </div>
+
+      <nav id="toc"></nav>
+
+    </aside>
+
+  {% endif %}
 
 
   <div class="article-content">
 
     {{ content }}
+
+  </div>
+
+
+  <div class="post-navigation">
+
+    {% if page.previous %}
+
+      <a
+        class="post-nav-card"
+        href="{{ page.previous.url | relative_url }}"
+      >
+
+        <span>
+          ← Previous
+        </span>
+
+        <strong>
+          {{ page.previous.title }}
+        </strong>
+
+      </a>
+
+    {% endif %}
+
+
+    {% if page.next %}
+
+      <a
+        class="post-nav-card next"
+        href="{{ page.next.url | relative_url }}"
+      >
+
+        <span>
+          Next →
+        </span>
+
+        <strong>
+          {{ page.next.title }}
+        </strong>
+
+      </a>
+
+    {% endif %}
 
   </div>
 

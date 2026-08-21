@@ -32,6 +32,13 @@ title: Home
       Latest Posts
     </h2>
 
+    <a
+      href="{{ '/categories/' | relative_url }}"
+      class="section-link"
+    >
+      Browse categories →
+    </a>
+
   </div>
 
 
@@ -45,15 +52,32 @@ title: Home
       >
 
         <span class="post-date">
+
           {{ post.date | date: "%d %B %Y" }}
+
+          {% assign words = post.content | number_of_words %}
+          {% assign reading_time = words | divided_by: 200 %}
+
+          {% if reading_time < 1 %}
+            {% assign reading_time = 1 %}
+          {% endif %}
+
+          · {{ reading_time }} min read
+
         </span>
+
 
         <h3>
           {{ post.title }}
         </h3>
 
+
         <p>
-          {{ post.excerpt | strip_html | truncate: 180 }}
+          {{ post.excerpt
+             | strip_html
+             | strip_newlines
+             | truncate: 180
+          }}
         </p>
 
 

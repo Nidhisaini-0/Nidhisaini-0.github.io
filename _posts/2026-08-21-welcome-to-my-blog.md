@@ -2,9 +2,17 @@
 layout: post
 title: "Welcome to My Cybersecurity Blog"
 date: 2026-08-21
+
 categories:
   - cybersecurity
   - introduction
+
+tags:
+  - cybersecurity
+  - learning
+  - ethical-hacking
+
+toc: true
 ---
 
 # Welcome
@@ -30,8 +38,17 @@ I'll be writing about:
 
 Cybersecurity is a field where understanding matters more than simply memorizing tools.
 
-So this blog will focus on understanding **how things work, how they can fail, and how they can be secured.**
+So this blog will focus on understanding:
 
-I'll also document mistakes and things I learn while experimenting in controlled environments.
+- How things work
+- How vulnerabilities happen
+- How attackers abuse them
+- How defenders can prevent them
+
+## Learning by doing
+
+I'll also document mistakes, experiments, labs, and things I discover while learning.
+
+All security testing will be performed in controlled environments.
 
 > Learn. Experiment. Understand. Secure.
