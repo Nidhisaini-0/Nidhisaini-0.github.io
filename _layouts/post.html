@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article class="article">
+
+  <header class="article-header">
+
+    <h1 class="article-title">
+      {{ page.title }}
+    </h1>
+
+    <div class="article-meta">
+
+      {{ page.date | date: "%d %B %Y" }}
+
+      {% if page.categories %}
+        ·
+        {% for category in page.categories %}
+          {{ category }}
+        {% endfor %}
+      {% endif %}
+
+    </div>
+
+  </header>
+
+
+  <div class="article-content">
+
+    {{ content }}
+
+  </div>
+
+</article>

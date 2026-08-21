@@ -3,22 +3,80 @@ layout: default
 title: Home
 ---
 
-# CyberSec Blog
+<section class="hero">
 
-### Learn. Experiment. Understand. Secure.
+  <div class="terminal-label">
+    root@cybersec:~$
+  </div>
 
-Welcome to my cybersecurity blog.
+  <h1>
+    Learn.
+    <span>Break.</span>
+    Secure.
+  </h1>
 
-Here I document my journey through cybersecurity, web security, networking, Linux, and ethical hacking.
+  <p class="hero-description">
+    A cybersecurity blog documenting practical learning,
+    security concepts, tools, experiments, and everything
+    in between.
+  </p>
 
-## Latest Posts
+</section>
 
-{% for post in site.posts %}
-### [{{ post.title }}]({{ post.url }})
 
-{{ post.excerpt }}
+<section>
 
-[Read more →]({{ post.url }})
+  <div class="section-header">
 
----
-{% endfor %}
+    <h2>
+      Latest Posts
+    </h2>
+
+  </div>
+
+
+  <div class="post-list">
+
+    {% for post in site.posts %}
+
+      <a
+        href="{{ post.url | relative_url }}"
+        class="post-card"
+      >
+
+        <span class="post-date">
+          {{ post.date | date: "%d %B %Y" }}
+        </span>
+
+        <h3>
+          {{ post.title }}
+        </h3>
+
+        <p>
+          {{ post.excerpt | strip_html | truncate: 180 }}
+        </p>
+
+
+        {% if post.categories %}
+
+          <div class="tags">
+
+            {% for category in post.categories %}
+
+              <span class="tag">
+                #{{ category }}
+              </span>
+
+            {% endfor %}
+
+          </div>
+
+        {% endif %}
+
+      </a>
+
+    {% endfor %}
+
+  </div>
+
+</section>

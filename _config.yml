@@ -1,11 +1,24 @@
 title: "CyberSec Blog"
-description: "Learning cybersecurity one vulnerability at a time."
+description: "Learning cybersecurity one vulnerability at a time"
 author: "Nidhi"
 
+url: "https://Nidhisaini-0.github.io"
+baseurl: ""
+
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
 
-theme: minima
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
 
-plugins: 
-    - jekyll-feed
+collections:
+  posts:
+    output: true
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

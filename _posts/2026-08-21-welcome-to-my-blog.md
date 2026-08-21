@@ -2,18 +2,20 @@
 layout: post
 title: "Welcome to My Cybersecurity Blog"
 date: 2026-08-21
-categories: [cybersecutrity]
+categories:
+  - cybersecurity
+  - introduction
 ---
 
 # Welcome
 
 Welcome to my cybersecurity blog.
 
-I'm using this space to document what I learn while exploring cybersecurity.
+I'm using this space to document my journey through cybersecurity and the things I learn along the way.
 
 ## What you'll find here
 
-I'll be writing about things such as:
+I'll be writing about:
 
 - Web security
 - Networking
@@ -22,10 +24,14 @@ I'll be writing about things such as:
 - OWASP
 - Ethical hacking
 - Security tools
-- Practical experiments
+- Practical security experiments
 
-This blog isn't about pretending to know everything.
+## Why this blog?
 
-It's about learning, breaking things in controlled environments, understanding why they break, and learning how to secure them.
+Cybersecurity is a field where understanding matters more than simply memorizing tools.
 
-> **Learn. Experiment. Understand. Secure.**
+So this blog will focus on understanding **how things work, how they can fail, and how they can be secured.**
+
+I'll also document mistakes and things I learn while experimenting in controlled environments.
+
+> Learn. Experiment. Understand. Secure.

@@ -1,0 +1,577 @@
+/* =========================================
+   CyberSec Blog
+   Main Stylesheet
+   ========================================= */
+
+:root {
+  --bg: #0a0d10;
+  --bg-secondary: #0f1419;
+  --surface: #111820;
+  --surface-hover: #151e27;
+
+  --text: #e6edf3;
+  --text-secondary: #9da7b3;
+  --text-muted: #6f7b87;
+
+  --accent: #39ff88;
+  --accent-dark: #1dbb5c;
+
+  --border: #202a34;
+
+  --code-bg: #080b0e;
+
+  --max-width: 1050px;
+}
+
+/* =========================================
+   Reset
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   Links
+   ========================================= */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   Header
+   ========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(10, 13, 16, 0.92);
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: auto;
+
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+}
+
+.logo {
+  color: var(--text);
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.logo::before {
+  content: "> ";
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* =========================================
+   Main Container
+   ========================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+
+  padding: 70px 24px;
+}
+
+/* =========================================
+   Hero
+   ========================================= */
+
+.hero {
+  padding: 60px 0 80px;
+}
+
+.terminal-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: var(--accent);
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 14px;
+}
+
+.hero h1 {
+  max-width: 800px;
+
+  margin: 0 0 20px;
+
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-description {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 18px;
+}
+
+/* =========================================
+   Section
+   ========================================= */
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 15px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  font-size: 22px;
+}
+
+.section-header h2::before {
+  content: "# ";
+  color: var(--accent);
+}
+
+/* =========================================
+   Post Cards
+   ========================================= */
+
+.post-list {
+  display: grid;
+  gap: 16px;
+}
+
+.post-card {
+  display: block;
+
+  padding: 25px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+
+  background: var(--surface-hover);
+
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.post-date {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--text-muted);
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 13px;
+}
+
+.post-card h3 {
+  margin: 0 0 10px;
+
+  color: var(--text);
+
+  font-size: 21px;
+}
+
+.post-card p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 15px;
+}
+
+/* =========================================
+   Tags
+   ========================================= */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.tag {
+  padding: 4px 9px;
+
+  color: var(--accent);
+
+  background: rgba(57, 255, 136, 0.06);
+
+  border: 1px solid rgba(57, 255, 136, 0.2);
+  border-radius: 4px;
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   Article
+   ========================================= */
+
+.article {
+  max-width: 800px;
+  margin: auto;
+}
+
+.article-header {
+  margin-bottom: 45px;
+
+  padding-bottom: 30px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.article-title {
+  margin: 0 0 15px;
+
+  font-size: clamp(36px, 6vw, 58px);
+
+  line-height: 1.1;
+
+  letter-spacing: -2px;
+}
+
+.article-meta {
+  color: var(--text-muted);
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 13px;
+}
+
+.article-content h2 {
+  margin-top: 50px;
+
+  font-size: 28px;
+
+  border-left: 3px solid var(--accent);
+
+  padding-left: 14px;
+}
+
+.article-content h3 {
+  margin-top: 35px;
+
+  font-size: 21px;
+}
+
+.article-content p {
+  margin: 20px 0;
+
+  color: #c7d0d9;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 25px;
+
+  color: #c7d0d9;
+}
+
+.article-content li {
+  margin: 8px 0;
+}
+
+/* =========================================
+   Blockquotes
+   ========================================= */
+
+blockquote {
+  margin: 30px 0;
+
+  padding: 18px 22px;
+
+  background: var(--surface);
+
+  border-left: 3px solid var(--accent);
+
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   Inline Code
+   ========================================= */
+
+code {
+  padding: 3px 6px;
+
+  background: #151b21;
+
+  border-radius: 4px;
+
+  color: var(--accent);
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 0.9em;
+}
+
+/* =========================================
+   Code Blocks
+   ========================================= */
+
+pre {
+  overflow-x: auto;
+
+  margin: 25px 0;
+
+  padding: 20px;
+
+  background: var(--code-bg);
+
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+
+pre code {
+  padding: 0;
+
+  background: transparent;
+
+  color: #d8e0e8;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   Horizontal Rule
+   ========================================= */
+
+hr {
+  margin: 45px 0;
+
+  border: 0;
+
+  border-top: 1px solid var(--border);
+}
+
+/* =========================================
+   About Page
+   ========================================= */
+
+.page {
+  max-width: 800px;
+  margin: auto;
+}
+
+.page-title {
+  margin-bottom: 35px;
+
+  font-size: clamp(38px, 6vw, 58px);
+
+  line-height: 1.1;
+}
+
+.page-content {
+  color: #c7d0d9;
+}
+
+.page-content h2 {
+  margin-top: 45px;
+}
+
+.page-content li {
+  margin: 8px 0;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+
+.site-footer {
+  margin-top: 60px;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--bg-secondary);
+}
+
+.footer-container {
+  max-width: var(--max-width);
+
+  margin: auto;
+
+  padding: 30px 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.footer-text {
+  color: var(--text-muted);
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+@media (max-width: 700px) {
+  .nav-container {
+    min-height: 60px;
+
+    padding: 0 18px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 45px 18px;
+  }
+
+  .hero {
+    padding: 35px 0 55px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .post-card {
+    padding: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
