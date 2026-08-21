@@ -1,17 +1,24 @@
-#  CyberSec Blog
+---
+layout: default
+title: Home
+---
 
+# CyberSec Blog
 
-Welcome to my cybersecurity blog. 
+### Learn. Experiment. Understand. Secure.
 
+Welcome to my cybersecurity blog.
 
-Learning cybersecurity one vulnerability at a time.
+Here I document my journey through cybersecurity, web security, networking, Linux, and ethical hacking.
 
+## Latest Posts
 
-## Topics 
+{% for post in site.posts %}
+### [{{ post.title }}]({{ post.url }})
 
- - Web Security
- - Networking
- - Linux 
- - Burp Suite
- - Owasp
- - Ethical Hacking
+{{ post.excerpt }}
+
+[Read more →]({{ post.url }})
+
+---
+{% endfor %}

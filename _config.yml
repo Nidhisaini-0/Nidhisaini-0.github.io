@@ -1,0 +1,11 @@
+title: "CyberSec Blog"
+description: "Learning cybersecurity one vulnerability at a time."
+author: "Nidhi"
+
+markdown: kramdown
+
+theme: minima
+
+plugins: 
+    - jekyll-feed
+
