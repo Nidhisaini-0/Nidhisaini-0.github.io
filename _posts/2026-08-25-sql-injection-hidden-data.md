@@ -4,7 +4,7 @@ layout: post
 title: "SQL Injection — Retrieving Hidden Data"
 date: 2026-08-25
 
-category: 
+categories: 
    - Web Security
   
 topic: SQL Injection

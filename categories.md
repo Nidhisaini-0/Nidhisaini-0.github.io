@@ -33,36 +33,137 @@ title: Categories
 
         </div>
 
-        <div class="post-list">
 
-          {% for post in posts %}
+        {% if category_name == "Web Security" %}
 
-            <a
-              href="{{ post.url | relative_url }}"
-              class="post-card"
-            >
+          <!-- Web Security Topics -->
 
-              <span class="post-date">
-                {{ post.date | date: "%d %B %Y" }}
-              </span>
+          {% assign topics = posts | map: "topic" | compact | uniq | sort %}
+
+          {% for topic in topics %}
+
+            <div class="topic-section">
 
               <h3>
-                {{ post.title }}
+                {{ topic }}
               </h3>
 
-              <p>
-                {{ post.excerpt
-                   | strip_html
-                   | strip_newlines
-                   | truncate: 160
-                }}
-              </p>
+              <div class="post-list">
 
-            </a>
+                {% for post in posts %}
+
+                  {% if post.topic == topic %}
+
+                    <a
+                      href="{{ post.url | relative_url }}"
+                      class="post-card"
+                    >
+
+                      <span class="post-date">
+                        {{ post.date | date: "%d %B %Y" }}
+                      </span>
+
+                      <h4>
+                        {{ post.title }}
+                      </h4>
+
+                      <p>
+                        {{ post.excerpt
+                           | strip_html
+                           | strip_newlines
+                           | truncate: 160
+                        }}
+                      </p>
+
+                    </a>
+
+                  {% endif %}
+
+                {% endfor %}
+
+              </div>
+
+            </div>
 
           {% endfor %}
 
-        </div>
+
+          <!-- Web Security posts without a topic -->
+
+          {% assign untitled_posts = posts | where_exp: "post", "post.topic == nil" %}
+
+          {% if untitled_posts.size > 0 %}
+
+            <div class="post-list">
+
+              {% for post in untitled_posts %}
+
+                <a
+                  href="{{ post.url | relative_url }}"
+                  class="post-card"
+                >
+
+                  <span class="post-date">
+                    {{ post.date | date: "%d %B %Y" }}
+                  </span>
+
+                  <h3>
+                    {{ post.title }}
+                  </h3>
+
+                  <p>
+                    {{ post.excerpt
+                       | strip_html
+                       | strip_newlines
+                       | truncate: 160
+                    }}
+                  </p>
+
+                </a>
+
+              {% endfor %}
+
+            </div>
+
+          {% endif %}
+
+
+        {% else %}
+
+          <!-- Normal categories -->
+
+          <div class="post-list">
+
+            {% for post in posts %}
+
+              <a
+                href="{{ post.url | relative_url }}"
+                class="post-card"
+              >
+
+                <span class="post-date">
+                  {{ post.date | date: "%d %B %Y" }}
+                </span>
+
+                <h3>
+                  {{ post.title }}
+                </h3>
+
+                <p>
+                  {{ post.excerpt
+                     | strip_html
+                     | strip_newlines
+                     | truncate: 160
+                  }}
+                </p>
+
+              </a>
+
+            {% endfor %}
+
+          </div>
+
+        {% endif %}
 
       </section>
 
