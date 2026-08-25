@@ -1,21 +1,20 @@
 ---
-
 layout: post
 title: "SQL Injection — Retrieving Hidden Data"
 date: 2026-08-25
 
-categories: 
-   - Web Security
-  
+categories:
+  - Web Security
+
 topic: SQL Injection
+
 tags:
+  - PortSwigger
+  - Burp Suite
+  - SQL Injection
+  - Web Security Academy
 
-* PortSwigger
-* Burp Suite
-* SQL Injection
-* Web Security Academy
-  toc: true
-
+toc: true
 ---
 
 # SQL Injection — Retrieving Hidden Data
