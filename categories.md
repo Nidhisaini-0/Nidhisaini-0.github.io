@@ -1,64 +1,73 @@
 ---
 layout: default
 title: Categories
-permalink: /categories/
 ---
 
-<div class="category-page">
+<div class="page">
 
-  <h1>Categories</h1>
+  <h1 class="page-title">
+    Categories
+  </h1>
 
-  {% assign categories = site.categories | sort %}
+  <div class="category-list">
 
-  {% for category in categories %}
+    {% for category in site.categories %}
 
-    <div class="category-section">
+      {% assign category_name = category[0] %}
+      {% assign posts = category[1] %}
 
-      <h2>
-        {{ category[0] }}
-      </h2>
+      <section
+        class="category-section"
+        id="{{ category_name | slugify }}"
+      >
 
-      {% assign category_posts = category[1] %}
+        <div class="section-header">
 
-      {% assign topics = category_posts
-        | map: "topic"
-        | compact
-        | uniq
-        | sort
-      %}
+          <h2>
+            {{ category_name }}
+          </h2>
 
-      {% for topic in topics %}
-
-        <div class="topic-section">
-
-          <h3>
-            {{ topic }}
-          </h3>
-
-          <ul>
-
-            {% for post in category_posts %}
-
-              {% if post.topic == topic %}
-
-                <li>
-                  <a href="{{ post.url | relative_url }}">
-                    {{ post.title }}
-                  </a>
-                </li>
-
-              {% endif %}
-
-            {% endfor %}
-
-          </ul>
+          <span class="category-count">
+            {{ posts.size }} post{% if posts.size != 1 %}s{% endif %}
+          </span>
 
         </div>
 
-      {% endfor %}
+        <div class="post-list">
 
-    </div>
+          {% for post in posts %}
 
-  {% endfor %}
+            <a
+              href="{{ post.url | relative_url }}"
+              class="post-card"
+            >
+
+              <span class="post-date">
+                {{ post.date | date: "%d %B %Y" }}
+              </span>
+
+              <h3>
+                {{ post.title }}
+              </h3>
+
+              <p>
+                {{ post.excerpt
+                   | strip_html
+                   | strip_newlines
+                   | truncate: 160
+                }}
+              </p>
+
+            </a>
+
+          {% endfor %}
+
+        </div>
+
+      </section>
+
+    {% endfor %}
+
+  </div>
 
 </div>
