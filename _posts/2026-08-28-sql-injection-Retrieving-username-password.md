@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SQL Injection — Retrieving username and password from users table"
-date: 2026-08-27
+date: 2026-08-28
 
 categories:
   - Web Security
@@ -42,36 +42,40 @@ And I got to know that this product category field has sql-injection vulnerabili
 
 ## Exploitation
 
-1. The first step for UNION based attack is to determine the number of column.
-Query for determining column number is:
 
-```sql
-'UNION SELECT NULL,NULL--
-```
-To know more about determining number of column read my previous lab:
+### 1. Determine the number of columns
+ The first step for UNION based attack is to determine the number of column.
+ Query for determining column number is:
 
-[Read my determining number of column post](2026-08-27-sql-injection-numbers-of-column.md)
+ ```sql
+ 'UNION SELECT NULL,NULL--
+ ```
+ To know more about determining number of column read my previous lab:
 
-In this lab the number of columns are 2.
+ [Read my determining number of column post](/blog/2026-08-27-sql-injection-numbers-of-column/)
 
-2. The second step is determining datatype of column, if it is text or number or NULL.
+ In this lab the number of columns are 2.
+
+### 2. Determine the datatype of each column
+ The second step is determining datatype of column, if it is text or number or NULL.
   
-```sql
-'UNION SELECT 'text','text'--
-```
-To know more about determining datatype of column read my previous lab:
+ ```sql
+ 'UNION SELECT 'text','text'--
+ ```
+ To know more about determining datatype of column read my previous lab:
 
-[Read my determining datatype of column post](2026-08-27-sql-injection-column-containing-text.md)
+ [Read my determining datatype of column post](/blog/2026-08-27-sql-injection-column-containing-text/)
 
-In this lab both column contain text.
+ In this lab both column contain text.
 
-3. In 3rd step I retrieve username and password from users table by the query:
+### 3. Retrieve the username and password
+ In 3rd step I retrieve username and password from users table by the query:
 
-```sql
-'UNION SELECT username,password from users--
-```
-This query returns usernames and passwords and from that list I took administrator user and It's password. 
-Using this information I successfully log in as the administrator user.
+ ```sql
+ 'UNION SELECT username,password from users--
+ ```
+ This query returns usernames and passwords and from that list I took administrator user and It's password. 
+ Using this information I successfully log in as the administrator user.
 
 
 ## Result
