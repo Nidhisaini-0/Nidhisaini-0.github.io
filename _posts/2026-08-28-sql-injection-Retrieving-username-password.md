@@ -52,7 +52,7 @@ And I got to know that this product category field has sql-injection vulnerabili
  ```
  To know more about determining number of column read my previous lab:
 
- [Read my determining number of column post](/blog/2026-08-27-sql-injection-numbers-of-column/)
+ [Read my determining number of columns post](/blog/2026/08/27/sql-injection-numbers-of-column/)
 
  In this lab the number of columns are 2.
 
@@ -64,7 +64,7 @@ And I got to know that this product category field has sql-injection vulnerabili
  ```
  To know more about determining datatype of column read my previous lab:
 
- [Read my determining datatype of column post](/blog/2026-08-27-sql-injection-column-containing-text/)
+ [Read my determining datatype of column post](/blog/2026/08/27/sql-injection-column-containing-text/)
 
  In this lab both column contain text.
 
