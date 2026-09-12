@@ -107,3 +107,17 @@ administrator user and its password **kizbiaigwists5jd6ikm** in login function I
 - By repeating these true/false tests, information can be inferred from the application's behavior even when query results are not directly visible.
   
 **Lab Status: Solved ✓**
+
+
+## Python Automation
+
+For automating the password extraction, I used a Python script originally written by **Rana Khalil** and published in the [Web-Security-Academy-Series repository](https://github.com/rkhal101/Web-Security-Academy-Series/blob/main/sql-injection/lab-11/sqli-lab-11.py).
+
+I modified the original implementation to work with my setup, including updating the HTTP client to handle HTTP/2 communication and making other changes required for my environment.
+
+**Original source:** [Rana Khalil — sqli-lab-11.py](https://github.com/rkhal101/Web-Security-Academy-Series/blob/main/sql-injection/lab-11/sqli-lab-11.py)
+
+The original implementation belongs to its respective author. My changes are my own modifications to the original script.
+
+
+[View the complete Python script](../scripts/blind-sqli-conditional-response.py)
