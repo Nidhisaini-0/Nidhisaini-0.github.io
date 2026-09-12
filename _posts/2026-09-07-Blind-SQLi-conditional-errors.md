@@ -133,4 +133,4 @@ I modified the original implementation to work with my setup, including updating
 The original implementation belongs to its respective author. My changes are my own modifications to the original script.
 
 
-[View the complete Python script](../scripts/blind-sqli-conditional-errors.py)
+[View the complete Python script](https://github.com/Nidhisaini-0/Nidhisaini-0.github.io/blob/main/scripts/blind-sqli-conditional-errors.py)
