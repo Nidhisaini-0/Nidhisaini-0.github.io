@@ -49,7 +49,7 @@ Common types are:
 
 2. Then I put some special character (like <, >, ") and the website still accepting it as input. It tells that the website have XSS vulnerability.
 
-3. Now as the lab ask me to call a ```alert``` funcion to solve the lab, I put
+3. Now as the lab ask me to call a ```alert``` function to solve the lab, I put
  ```text
  <script> alert() </script>
 ```
