@@ -72,7 +72,11 @@ in the search bar, it shows an alert pop-up on the screen.
 This lab shows what happens when a website takes what you type and puts it straight into the page — no filtering, no encoding, nothing. Whatever you send, it shows.
 
 2. No escaping needed to break in
-Since the input lands right in the HTML body, you don't need any fancy tricks to close tags or escape quotes. A basic ```text <script>alert(1)</script>``` just works.
+Since the input lands right in the HTML body, you don't need any fancy tricks to close tags or escape quotes. A basic 
+```text
+ <script>alert(1)</script>
+ ``` 
+ just works.
 
 3. It only fires when someone clicks
 Reflected XSS isn't stored anywhere — it only runs when a victim opens a specially crafted link. So the real-world attack usually involves tricking someone into clicking it (phishing, basically).
